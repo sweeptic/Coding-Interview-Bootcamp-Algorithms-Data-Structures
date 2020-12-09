@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+
+<body style="background-color: rgb(34, 34, 34);">
+
+
+   <script>
+
+
+
+      function fib_(n) {
+         let arr = [0, 1];
+         for (let i = 2; i < n + 1; i++) {
+            arr.push(arr[i - 2] + arr[i - 1])
+         }
+         return arr
+      }
+
+
+      function fib(n) {
+         if (n < 2) {
+            return n
+         }
+         return fib(n - 1) + fib(n - 2)
+      }
+
+
+      // console.log(fib_(5))
+      // console.log(fib(5))
+
+
+
+      function fizzbuzz() {
+         let num = 1
+         while (num <= 100) {
+            if (num % 15 == 0) {
+               console.log(num, 'fizzbuzz');
+            }
+
+            if (num % 3 == 0) {
+               console.log(num, 'fizz');
+            }
+
+            if (num % 5 == 0) {
+               console.log(num, 'buzz');
+            }
+            num++
+         }
+      }
+
+      // fizzbuzz()
+
+   </script>
+
+
+
+</body>
+
+</html>

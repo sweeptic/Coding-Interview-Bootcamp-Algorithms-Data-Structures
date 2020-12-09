@@ -1,0 +1,23 @@
+{
+  "name": "_interview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sweeptic/Coding-Interview-Bootcamp-Algorithms-Data-Structures.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sweeptic/Coding-Interview-Bootcamp-Algorithms-Data-Structures/issues"
+  },
+  "homepage": "https://github.com/sweeptic/Coding-Interview-Bootcamp-Algorithms-Data-Structures#readme",
+  "dependencies": {
+    "jest": "^26.6.3"
+  }
+}
