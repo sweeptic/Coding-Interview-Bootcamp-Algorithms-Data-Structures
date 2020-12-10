@@ -11,7 +11,7 @@ function palindrome(str) {
   const arr = str.split('');
   let isPalindrome = true;
 
-  while (arr.length > 1) {
+  while (arr.length > 1 && isPalindrome) {
     isPalindrome = arr.shift() == arr.pop() && isPalindrome;
   }
 
