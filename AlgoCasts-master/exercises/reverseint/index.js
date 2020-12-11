@@ -18,9 +18,6 @@ function reverseInt(n) {
     res.push(array.pop());
   }
 
-  // console.log(n, res);
-  console.log(n, +res.join(''));
-
   return +res.join('');
 }
 
