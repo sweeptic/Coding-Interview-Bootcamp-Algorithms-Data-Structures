@@ -7,32 +7,20 @@
 
 function maxChar(str) {
   const obj = {};
-  let max = 0;
-  let key = '';
+  const max = ['', 0];
 
   str.split('').map(item => {
-    if (item !== ' ') {
-      if (!obj[item]) {
-        obj[item] = 1;
-      } else {
-        obj[item]++;
-      }
-      if (obj[item] > max) {
-        max = obj[item];
-        key = item;
-      }
+    obj[item] = obj[item] + 1 || 1;
+
+    if (obj[item] > max[1]) {
+      max[0] = item;
+      max[1] = obj[item];
     }
   });
 
-  // for (item in obj) {
-  //    if (obj[item] > max) {
-  //       max = item
-  //    }
-  // }
-
-  //   console.log(obj);
-  //   console.log(max, key);
-  return key;
+  console.log(obj);
+  console.log(max);
+  return max[0];
 }
 
 module.exports = maxChar;
