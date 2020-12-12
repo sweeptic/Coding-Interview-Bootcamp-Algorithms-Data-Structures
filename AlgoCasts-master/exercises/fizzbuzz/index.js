@@ -13,7 +13,7 @@
 //   buzz
 function fizzBuzz(n) {
   let index = 1;
-  while (index < n + 1) {
+  while (index <= n) {
     if (index % 15 === 0) {
       console.log('fizzbuzz');
     } else if (index % 3 === 0) {
