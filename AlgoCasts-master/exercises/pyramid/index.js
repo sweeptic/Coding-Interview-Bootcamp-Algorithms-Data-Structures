@@ -14,22 +14,26 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {
-  const middle = Math.floor((n * 2 - 1) / 2);
+function rowBuilder(n, col) {
+  if (n < 0) return;
+  let level = '';
 
-  for (let i = 0; i < n; i++) {
-    let level = '';
+  rowBuilder(n - 1, col);
+  const middle = Math.floor(col / 2);
 
-    for (let j = 0; j < n * 2 - 1; j++) {
-      if (j >= middle - i && j <= middle + i) {
-        level += '#';
-      } else {
-        level += ' ';
-      }
+  for (let j = 0; j < col; j++) {
+    if (j >= middle - n && j <= middle + n) {
+      level += '#';
+    } else {
+      level += ' ';
     }
-
-    console.log(level);
   }
+  console.log(level);
+  // console.log(n, col, middle);
+}
+
+function pyramid(n) {
+  rowBuilder(n - 1, n * 2 - 1);
 }
 
 // function buildBlock(n, block, res) {
