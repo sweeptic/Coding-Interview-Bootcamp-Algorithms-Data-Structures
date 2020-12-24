@@ -26,9 +26,8 @@ describe('Insert First', () => {
     expect(l.head.data).toEqual(2);
   });
 });
-/************************************************************************************ */
 
-describe.skip('Size', () => {
+describe('Size', () => {
   test('returns the number of items in the linked list', () => {
     const l = new List();
     expect(l.size()).toEqual(0);
@@ -39,6 +38,8 @@ describe.skip('Size', () => {
     expect(l.size()).toEqual(4);
   });
 });
+
+/************************************************************************************ */
 
 describe.skip('GetFirst', () => {
   test('returns the first element', () => {
