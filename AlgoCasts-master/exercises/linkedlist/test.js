@@ -72,9 +72,8 @@ describe('Clear', () => {
     expect(l.size()).toEqual(0);
   });
 });
-/************************************************************************************ */
 
-describe.skip('RemoveFirst', () => {
+describe('RemoveFirst', () => {
   test('removes the first node when the list has a size of one', () => {
     const l = new List();
     l.insertFirst('a');
@@ -82,6 +81,8 @@ describe.skip('RemoveFirst', () => {
     expect(l.size()).toEqual(0);
     expect(l.getFirst()).toEqual(null);
   });
+
+  /************************************************************************************ */
 
   test('removes the first node when the list has a size of three', () => {
     const l = new List();
@@ -97,7 +98,7 @@ describe.skip('RemoveFirst', () => {
   });
 });
 
-describe.skip('RemoveLast', () => {
+describe('RemoveLast', () => {
   test('RemoveLast removes the last node when list is empty', () => {
     const l = new List();
     expect(() => {
