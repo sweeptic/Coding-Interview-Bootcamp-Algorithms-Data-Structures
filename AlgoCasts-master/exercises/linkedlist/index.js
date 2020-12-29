@@ -37,12 +37,30 @@ class LinkedList {
   }
 
   getLast() {
+    if (!this.head) {
+      return null;
+    }
     let pointer = this.head;
     while (pointer.next) {
       pointer = pointer.next;
     }
     return pointer;
   }
+  /*
+  getLast() {
+    if (!this.head) {
+      return null;
+    }
+
+    let node = this.head;
+    while (node) {
+      if (!node.next) {
+        return node;
+      }
+      node = node.next;
+    }
+  }
+*/
 
   clear() {
     this.head = null;
@@ -73,33 +91,31 @@ class LinkedList {
 
   insertLast(record) {
     const rec = new Node(record);
+    const last = this.getLast();
 
-    if (!this.head) {
+    if (last) {
+      last.next = rec;
+    } else {
       this.head = rec;
-      return;
     }
-
-    let pointer = this.head;
-
-    while (pointer.next) {
-      pointer = pointer.next;
-    }
-
-    pointer.next = rec;
   }
 
   getAt(idx) {
-    let pointer = this.head;
-    let index = 0;
-
-    while (idx > index) {
-      if (!pointer || !pointer.next) {
-        return null;
-      }
-      pointer = pointer.next;
-      index++;
+    if (!this.head) {
+      return null;
     }
-    return pointer;
+
+    let counter = 0;
+    let node = this.head;
+
+    while (node) {
+      if (counter === idx) {
+        return node;
+      }
+      counter++;
+      node = node.next;
+    }
+    return null;
   }
 }
 
