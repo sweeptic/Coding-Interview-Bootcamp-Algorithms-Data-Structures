@@ -70,6 +70,37 @@ class LinkedList {
       prev.next = null;
     }
   }
+
+  insertLast(record) {
+    const rec = new Node(record);
+
+    if (!this.head) {
+      this.head = rec;
+      return;
+    }
+
+    let pointer = this.head;
+
+    while (pointer.next) {
+      pointer = pointer.next;
+    }
+
+    pointer.next = rec;
+  }
+
+  getAt(idx) {
+    let pointer = this.head;
+    let index = 0;
+
+    while (idx > index) {
+      if (!pointer || !pointer.next) {
+        return null;
+      }
+      pointer = pointer.next;
+      index++;
+    }
+    return pointer;
+  }
 }
 
 module.exports = { Node, LinkedList };
