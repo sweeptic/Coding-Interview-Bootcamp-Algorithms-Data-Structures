@@ -46,21 +46,6 @@ class LinkedList {
     }
     return pointer;
   }
-  /*
-  getLast() {
-    if (!this.head) {
-      return null;
-    }
-
-    let node = this.head;
-    while (node) {
-      if (!node.next) {
-        return node;
-      }
-      node = node.next;
-    }
-  }
-*/
 
   clear() {
     this.head = null;
@@ -116,6 +101,25 @@ class LinkedList {
       node = node.next;
     }
     return null;
+  }
+
+  removeAt(index) {
+    const len = this.size();
+
+    if (index > len || !len) return 'out of index';
+
+    //if remove first element
+    if (!index) {
+      this.removeFirst();
+    }
+    // remove last element
+    else if (index === len - 1) {
+      this.removeLast();
+    } else {
+      const prev = this.getAt(index - 1);
+      const next = this.getAt(index + 1);
+      prev.next = next;
+    }
   }
 }
 

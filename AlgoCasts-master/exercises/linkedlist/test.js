@@ -163,9 +163,7 @@ describe('GetAt', () => {
   });
 });
 
-/************************************************************************************ */
-
-describe.skip('RemoveAt', () => {
+describe('RemoveAt', () => {
   test('removeAt doesnt crash on an empty list', () => {
     const l = new List();
     expect(() => {
@@ -217,6 +215,8 @@ describe.skip('RemoveAt', () => {
     expect(l.getAt(3)).toEqual(null);
   });
 });
+
+/************************************************************************************ */
 
 describe.skip('InsertAt', () => {
   test('inserts a new node with data at the 0 index when the list is empty', () => {
