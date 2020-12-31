@@ -271,9 +271,7 @@ describe('InsertAt', () => {
   });
 });
 
-/************************************************************************************ */
-
-describe.skip('ForEach', () => {
+describe('ForEach', () => {
   test('applies a transform to each node', () => {
     const l = new List();
 
@@ -292,6 +290,8 @@ describe.skip('ForEach', () => {
     expect(l.getAt(3).data).toEqual(14);
   });
 });
+
+/************************************************************************************ */
 
 describe.skip('for...of loops', () => {
   test('works with the linked list', () => {

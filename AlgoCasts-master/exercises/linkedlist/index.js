@@ -142,6 +142,17 @@ class LinkedList {
       newItem.next = next;
     }
   }
+
+  forEach(cb) {
+    const len = this.size();
+    let index = 0;
+
+    while (len > index) {
+      const item = this.getAt(index);
+      cb(item);
+      index++;
+    }
+  }
 }
 
 module.exports = { Node, LinkedList };
