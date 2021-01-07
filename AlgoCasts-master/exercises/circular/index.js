@@ -12,6 +12,21 @@
 //   c.next = b;
 //   circular(l) // true
 
-function circular(list) {}
+function circular(list) {
+  const obj = {};
+  let circular = false;
+  let item = list.getFirst();
+
+  while (!circular && item) {
+    if (obj[item.data]) {
+      circular = true;
+    } else {
+      obj[item.data] = 1;
+    }
+
+    item = item.next;
+  }
+  return circular;
+}
 
 module.exports = circular;
