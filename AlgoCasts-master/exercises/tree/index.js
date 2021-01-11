@@ -35,7 +35,7 @@ class Tree {
     items.push(this.root);
 
     while (items.length) {
-      console.log(items[0].data);
+      // console.log(items[0].data);
 
       cb(items[0]);
 
@@ -52,6 +52,18 @@ class Tree {
     //    cb(actual);
     //    items.push(...actual.children);
     // }
+  }
+
+  traverseDF(cb) {
+    const items = [];
+    items.push(this.root);
+
+    while (items.length) {
+      // console.log(items[0].data);
+      const actual = items.shift();
+      cb(actual);
+      items.unshift(...actual.children);
+    }
   }
 }
 
