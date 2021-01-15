@@ -30,6 +30,34 @@ class Node {
     }
   }
 
+  contains(data, node = this) {
+    if (!node) {
+      return null;
+    }
+
+    if (data === node.data) {
+      return node;
+    }
+
+    return this.contains(data, node.left) || this.contains(data, node.right);
+  }
+
+  /*
+  contains(data) {
+    if (this.data === data) {
+      return this;
+    }
+
+    if (this.data < data && this.right) {
+      return this.right.contains(data);
+    } else if (this.data > data && this.left) {
+      return this.left.contains(data);
+    }
+
+    return null;
+  }
+*/
+
   /*
   insert(data) {
    if (data < this.data && this.left) {
