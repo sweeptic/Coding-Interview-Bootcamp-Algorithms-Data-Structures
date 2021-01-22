@@ -10,7 +10,24 @@ function bubbleSort(arr) {
   return arr;
 }
 
-function selectionSort(arr) {}
+function selectionSort(arr) {
+  let i = 0;
+  for (; i < arr.length; i++) {
+    let min = i;
+
+    for (let j = i; j < arr.length; j++) {
+      if (arr[j] < arr[min]) {
+        min = j;
+      }
+    }
+
+    if (min !== i) {
+      [arr[i], arr[min]] = [arr[min], arr[i]];
+    }
+  }
+
+  return arr;
+}
 
 function mergeSort(arr) {}
 
