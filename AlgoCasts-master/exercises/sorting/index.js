@@ -54,4 +54,16 @@ function mergeSort(arr) {
   return merge(left, right);
 }
 
+function quickSort(arr) {
+  if (arr.length <= 1) return arr;
+
+  const pivot = arr.shift();
+  const left = [];
+  const right = [];
+
+  arr.map(item => (item < pivot ? left.push(item) : right.push(item)));
+
+  return [...quickSort(left), pivot, ...quickSort(right)];
+}
+
 module.exports = { bubbleSort, selectionSort, mergeSort, merge };
