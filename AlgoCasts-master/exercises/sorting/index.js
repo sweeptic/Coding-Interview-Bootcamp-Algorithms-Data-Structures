@@ -29,8 +29,29 @@ function selectionSort(arr) {
   return arr;
 }
 
-function mergeSort(arr) {}
+function merge(left, right) {
+  let sortedArr = [];
+  while (left.length && right.length) {
+    if (left[0] <= right[0]) {
+      sortedArr.push(left.shift());
+    } else {
+      sortedArr.push(right.shift());
+    }
+  }
+  return [...sortedArr, ...left, ...right];
+}
 
-function merge(left, right) {}
+function mergeSort(arr) {
+  // console.log(arr);
+
+  if (arr.length < 2) return arr;
+
+  const middle = arr.length / 2;
+
+  const left = mergeSort(arr.slice(0, middle));
+  const right = mergeSort(arr.slice(middle));
+
+  return merge(left, right);
+}
 
 module.exports = { bubbleSort, selectionSort, mergeSort, merge };
